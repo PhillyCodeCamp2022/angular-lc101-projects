@@ -9,16 +9,32 @@ export class CandidatesComponent implements OnInit {
   missionName = "LaunchCode Moonshot"
 
   candidates = [
-    { name: 'Rusty Rutabaga', data: { age: 5, mass: '0.75 kg', sidekick: 'Blake' }, image: 'assets/images/Blake.png' },
+    {
+      name: 'Rusty Rutabaga',
+      data: { age: 5, mass: '0.75 kg', sidekick: 'Blake' },
+      image: 'assets/images/Blake.png'
+    },
     { name: 'Tessa Tortoise', data: { age: 126, mass: '113 kg', sidekick: 'Sally' }, image: 'assets/images/Sally.png' },
     { name: 'Bernie Beagle', data: { age: 4, mass: '15 kg', sidekick: 'Paul' }, image: 'assets/images/Paul.png' },
     { name: 'Jackalope', data: { age: 45, mass: '33 kg', sidekick: 'Chris' }, image: 'assets/images/Chris.png' },
     { name: 'Champ', data: { age: 9, mass: '36 kg', sidekick: 'Carly' }, image: 'assets/images/Carly.png' }
   ];
+  // console.log bernie beagle from the array
+
 
   crew = [];
 
-  constructor() { }
+  addToCrew(candidate: object) {
+    // if the candidate isn't already in the crew array
+    // push the candidate into the crew array
+    if (!this.crew.includes(candidate)) {
+      this.crew.push(candidate);
+    }
+  }
+
+  constructor() {
+    // console.log(this.candidates[2].name);
+  }
 
   ngOnInit() {
   }
